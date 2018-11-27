@@ -26,6 +26,7 @@ import TabsInDrawer from './TabsInDrawer';
 import ModalStack from './ModalStack';
 import StacksInTabs from './StacksInTabs';
 import StacksOverTabs from './StacksOverTabs';
+import StacksOverTopTabs from './StacksOverTopTabs';
 import StacksWithKeys from './StacksWithKeys';
 import InactiveStack from './InactiveStack';
 import StackWithCustomHeaderBackImage from './StackWithCustomHeaderBackImage';
@@ -33,8 +34,10 @@ import SimpleStack from './SimpleStack';
 import StackWithHeaderPreset from './StackWithHeaderPreset';
 import StackWithTranslucentHeader from './StackWithTranslucentHeader';
 import SimpleTabs from './SimpleTabs';
+import CustomTabUI from './CustomTabUI';
 import SwitchWithStacks from './SwitchWithStacks';
 import TabsWithNavigationFocus from './TabsWithNavigationFocus';
+import TabsWithNavigationEvents from './TabsWithNavigationEvents';
 import KeyboardHandlingExample from './KeyboardHandlingExample';
 
 const ExampleInfo = {
@@ -105,6 +108,10 @@ const ExampleInfo = {
     name: 'Stacks over Tabs',
     description: 'Nested stack navigation that pushes on top of tabs',
   },
+  StacksOverTopTabs: {
+    name: 'Stacks with non-standard header height',
+    description: 'Tab navigator in stack with custom header heights',
+  },
   StacksWithKeys: {
     name: 'Link in Stack with keys',
     description: 'Use keys to link between screens',
@@ -121,10 +128,19 @@ const ExampleInfo = {
     name: 'withNavigationFocus',
     description: 'Receive the focus prop to know when a screen is focused',
   },
+  TabsWithNavigationEvents: {
+    name: 'NavigationEvents',
+    description:
+      'Declarative NavigationEvents component to subscribe to navigation events',
+  },
   KeyboardHandlingExample: {
     name: 'Keyboard Handling Example',
     description:
       'Demo automatic handling of keyboard showing/hiding inside StackNavigator',
+  },
+  CustomTabUI: {
+    name: 'Custom Tabs UI',
+    description: 'Render additional views around a Tab navigator',
   },
 };
 
@@ -137,7 +153,12 @@ const ExampleRoutes = {
   //   screen: MultipleDrawer,
   // },
   StackWithCustomHeaderBackImage: StackWithCustomHeaderBackImage,
-  StackWithHeaderPreset: StackWithHeaderPreset,
+  ...Platform.select({
+    ios: {
+      StackWithHeaderPreset: StackWithHeaderPreset,
+    },
+    android: {},
+  }),
   StackWithTranslucentHeader: StackWithTranslucentHeader,
   TabsInDrawer: TabsInDrawer,
   CustomTabs: CustomTabs,
@@ -145,7 +166,9 @@ const ExampleRoutes = {
   ModalStack: ModalStack,
   StacksWithKeys: StacksWithKeys,
   StacksInTabs: StacksInTabs,
+  CustomTabUI: CustomTabUI,
   StacksOverTabs: StacksOverTabs,
+  StacksOverTopTabs: StacksOverTopTabs,
   LinkStack: {
     screen: SimpleStack,
     path: 'people/Jordan',
@@ -155,6 +178,7 @@ const ExampleRoutes = {
     path: 'settings',
   },
   TabsWithNavigationFocus,
+  TabsWithNavigationEvents,
   KeyboardHandlingExample,
   // This is commented out because it's rarely useful
   // InactiveStack,
