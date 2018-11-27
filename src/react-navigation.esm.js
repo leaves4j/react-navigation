@@ -5,6 +5,8 @@ import StateUtils from './StateUtils';
 
 import createNavigator from './navigators/createNavigator';
 import createSwitchNavigator from './navigators/createSwitchNavigator';
+import createKeyboardAwareNavigator from './navigators/createKeyboardAwareNavigator';
+
 import {
   createBottomTabNavigator,
   createMaterialTopTabNavigator,
@@ -58,6 +60,7 @@ export {
   createDrawerNavigator,
   createBottomTabNavigator,
   createMaterialTopTabNavigator,
+  createKeyboardAwareNavigator,
   // Actions
   NavigationActions,
   StackActions,
