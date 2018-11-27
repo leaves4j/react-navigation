@@ -1,18 +1,9 @@
+import reactNavigationStack from 'react-navigation-stack';
+import SafeAreaView from 'react-native-safe-area-view';
 import createNavigationContainer from './createNavigationContainer';
 import StateUtils from './StateUtils';
 
 import createNavigator from './navigators/createNavigator';
-import {
-  createStackNavigator,
-  Transitioner,
-  StackView,
-  StackViewCard,
-  StackViewTransitionConfigs,
-  Header,
-  HeaderTitle,
-  HeaderBackButton,
-  HeaderStyleInterpolator,
-} from 'react-navigation-stack';
 import createSwitchNavigator from './navigators/createSwitchNavigator';
 import {
   createBottomTabNavigator,
@@ -26,7 +17,6 @@ import StackRouter from './routers/StackRouter';
 import TabRouter from './routers/TabRouter';
 import SwitchRouter from './routers/SwitchRouter';
 
-import SafeAreaView from 'react-native-safe-area-view';
 import SceneView from './views/SceneView';
 import ResourceSavingSceneView from './views/ResourceSavingSceneView';
 
@@ -44,6 +34,18 @@ import SwitchView from './views/SwitchView/SwitchView';
 import withNavigation from './views/withNavigation';
 import withNavigationFocus from './views/withNavigationFocus';
 import withOrientation from './views/withOrientation';
+
+const {
+  createStackNavigator,
+  Transitioner,
+  StackView,
+  StackViewCard,
+  StackViewTransitionConfigs,
+  Header,
+  HeaderTitle,
+  HeaderBackButton,
+  HeaderStyleInterpolator,
+} = reactNavigationStack;
 
 export {
   // Core
