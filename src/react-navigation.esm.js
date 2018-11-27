@@ -2,9 +2,18 @@ import createNavigationContainer from './createNavigationContainer';
 import StateUtils from './StateUtils';
 
 import createNavigator from './navigators/createNavigator';
-import createStackNavigator from './navigators/createStackNavigator';
+import {
+  createStackNavigator,
+  Transitioner,
+  StackView,
+  StackViewCard,
+  StackViewTransitionConfigs,
+  Header,
+  HeaderTitle,
+  HeaderBackButton,
+  HeaderStyleInterpolator,
+} from 'react-navigation-stack';
 import createSwitchNavigator from './navigators/createSwitchNavigator';
-import createDrawerNavigator from './navigators/createDrawerNavigator';
 import {
   createBottomTabNavigator,
   createMaterialTopTabNavigator,
@@ -12,28 +21,23 @@ import {
 
 import NavigationActions from './NavigationActions';
 import StackActions from './routers/StackActions';
-import DrawerActions from './routers/DrawerActions';
-import getNavigationActionCreators from './routers/getNavigationActionCreators';
 
 import StackRouter from './routers/StackRouter';
 import TabRouter from './routers/TabRouter';
-import DrawerRouter from './routers/DrawerRouter';
 import SwitchRouter from './routers/SwitchRouter';
 
-import Transitioner from './views/Transitioner';
-import StackView from './views/StackView/StackView';
-import StackViewCard from './views/StackView/StackViewCard';
 import SafeAreaView from 'react-native-safe-area-view';
 import SceneView from './views/SceneView';
 import ResourceSavingSceneView from './views/ResourceSavingSceneView';
 
-import Header from './views/Header/Header';
-import HeaderTitle from './views/Header/HeaderTitle';
-import HeaderBackButton from './views/Header/HeaderBackButton';
-
-import DrawerView from './views/Drawer/DrawerView';
-import DrawerItems from './views/Drawer/DrawerNavigatorItems';
-import DrawerSidebar from './views/Drawer/DrawerSidebar';
+import {
+  DrawerView,
+  DrawerItems,
+  DrawerSidebar,
+  createDrawerNavigator,
+  DrawerActions,
+  DrawerRouter,
+} from 'react-navigation-drawer';
 
 import SwitchView from './views/SwitchView/SwitchView';
 
@@ -56,7 +60,6 @@ export {
   NavigationActions,
   StackActions,
   DrawerActions,
-  getNavigationActionCreators,
   // Routers
   StackRouter,
   TabRouter,
@@ -69,10 +72,12 @@ export {
   SafeAreaView,
   SceneView,
   ResourceSavingSceneView,
+  StackViewTransitionConfigs,
   // Header
   Header,
   HeaderTitle,
   HeaderBackButton,
+  HeaderStyleInterpolator,
   // DrawerView
   DrawerView,
   DrawerItems,
