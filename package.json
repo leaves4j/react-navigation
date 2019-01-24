@@ -34,7 +34,7 @@
     "create-react-context": "0.2.2",
     "hoist-non-react-statics": "^2.2.0",
     "path-to-regexp": "^1.7.0",
-    "query-string": "^6.1.0",
+    "query-string": "^5.1.0",
     "react-is": "^16.5.2",
     "react-lifecycles-compat": "^3",
     "react-native-safe-area-view": "0.11.0",
